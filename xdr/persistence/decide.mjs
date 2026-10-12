@@ -59,11 +59,12 @@ function signal(alert) {
   const survive=/다시\s*켜도\s*남|재부팅.*남|영구\s*등록|부팅.*자동|persists?\s*after\s*reboot|survive\s*reboot/.test(description);
   const repeated=/연속|반복|같은\s*파일|함께|여러\s*건|consecutive|repeated|multiple\s*registrations?/.test(description) || count>=3;
   const passive=/읽기만|보기만|변경\s*없|그대로|완료|로그인했|로그아웃|화면이\s*열|상태\s*조회|status\s*check|read.only/.test(description);
+  const noRegistration=/서비스\s*등록(?:은|이)?\s*없|서비스\s*생성(?:은|이)?\s*없|서비스\s*등록\s*없음|no\s+(?:new\s+)?service\s+(?:installed|registered)|service\s+not\s+installed/.test(description);
   const signedSafe=/서명된\s*채|정상\s*서명|서명이\s*유효|valid\s*signature|signed\s*(?:binary|service)/.test(description) ||
     service.signatureValid===true;
   const authorized=/기존|평소\s*시각|운영체제\s*업데이트|정의\s*업데이트|수업\s*도구\s*서비스/.test(description);
   return {svc,scheduled,startup,newChange,missingSignature,unknown,tmp,fromStartup,
-    afterHours,survive,repeated,passive,signedSafe,authorized,tagged,level,count,
+    afterHours,survive,repeated,passive,signedSafe,authorized,noRegistration,tagged,level,count,
     source:choose(d.srcip,d.src_ip,d.source_ip,d.client_ip,a.srcip,a.source_ip),
     description};
 }
@@ -81,15 +82,15 @@ export function decide(alert) {
   if(s.authorized && s.level<=3 && !s.unknown && !s.missingSignature)
     return result(.06,PATTERNS.benign);
 
-  const serviceRisk=s.svc && s.newChange &&
+  const serviceRisk=!s.noRegistration && s.svc && s.newChange &&
     (s.missingSignature || s.unknown || s.survive || (s.tmp && !s.authorized));
   const taskRisk=s.scheduled && s.newChange &&
     (s.tmp || s.unknown || s.afterHours || s.missingSignature);
   const startupRisk=s.startup && s.newChange &&
     (s.unknown || s.fromStartup && s.level>=10 || s.missingSignature);
   const jointRisk=(s.scheduled && s.startup && s.tmp) ||
-    (s.svc && s.scheduled && s.unknown) ||
-    (s.svc && s.missingSignature && s.repeated && s.newChange);
+    (s.svc && s.scheduled && s.unknown && !s.noRegistration) ||
+    (s.svc && s.missingSignature && s.repeated && s.newChange && !s.noRegistration);
 
   if(s.tagged && s.level>=10 && hasSource(s.source)) {
     if(jointRisk)return result(.98,PATTERNS.correlated);
