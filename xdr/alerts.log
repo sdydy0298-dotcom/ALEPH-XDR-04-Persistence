@@ -1,0 +1,16 @@
+{"alertId":"ps-01","action":"block","confidence":0.96,"reason":"T1543-Unsigned-New-Service","at":"2026-10-13T00:00:00.000Z"}
+{"alertId":"ps-02","action":"block","confidence":0.95,"reason":"T1053-Untrusted-Scheduled-Task","at":"2026-10-13T00:00:00.000Z"}
+{"alertId":"ps-03","action":"block","confidence":0.94,"reason":"T1547-Startup-Folder-Persistence","at":"2026-10-13T00:00:00.000Z"}
+{"alertId":"ps-04","action":"block","confidence":0.98,"reason":"T1543-T1053-Correlated-Persistence","at":"2026-10-13T00:00:00.000Z"}
+{"alertId":"ps-05","action":"block","confidence":0.95,"reason":"T1053-Untrusted-Scheduled-Task","at":"2026-10-13T00:00:00.000Z"}
+{"alertId":"ps-06","action":"block","confidence":0.96,"reason":"T1543-Unsigned-New-Service","at":"2026-10-13T00:00:00.000Z"}
+{"alertId":"ps-07","action":"block","confidence":0.98,"reason":"T1543-T1053-Correlated-Persistence","at":"2026-10-13T00:00:00.000Z"}
+{"alertId":"ps-08","action":"block","confidence":0.96,"reason":"T1543-Unsigned-New-Service","at":"2026-10-13T00:00:00.000Z"}
+{"alertId":"ps-09","action":"alert","confidence":0.64,"reason":"T1543-T1053-Uncertain-Change","at":"2026-10-13T00:00:00.000Z"}
+{"alertId":"ps-10","action":"alert","confidence":0.64,"reason":"T1543-T1053-Uncertain-Change","at":"2026-10-13T00:00:00.000Z"}
+{"alertId":"ps-11","action":"alert","confidence":0.64,"reason":"T1543-T1053-Uncertain-Change","at":"2026-10-13T00:00:00.000Z"}
+{"alertId":"ps-12","action":"alert","confidence":0.64,"reason":"T1543-T1053-Uncertain-Change","at":"2026-10-13T00:00:00.000Z"}
+{"alertId":"ps-13","action":"alert","confidence":0.64,"reason":"T1543-T1053-Uncertain-Change","at":"2026-10-13T00:00:00.000Z"}
+{"alertId":"ps-14","action":"alert","confidence":0.64,"reason":"T1543-T1053-Uncertain-Change","at":"2026-10-13T00:00:00.000Z"}
+{"alertId":"ps-15","action":"alert","confidence":0.64,"reason":"T1543-T1053-Uncertain-Change","at":"2026-10-13T00:00:00.000Z"}
+{"alertId":"ps-16","action":"alert","confidence":0.64,"reason":"T1543-T1053-Uncertain-Change","at":"2026-10-13T00:00:00.000Z"}

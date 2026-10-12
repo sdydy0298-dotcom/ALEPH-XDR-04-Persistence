@@ -1,0 +1,328 @@
+{
+  "schema": "aleph.xdr.result.v1",
+  "moduleKey": "persistence",
+  "generatedAt": "2026-10-13T00:00:00.000Z",
+  "fixtureCount": 24,
+  "counts": {
+    "block": 8,
+    "alert": 8,
+    "record": 8
+  },
+  "normalBlocked": 0,
+  "temporaryDenyRules": [
+    {
+      "id": "xdr04-ps-01",
+      "source": "203.0.113.12",
+      "alertId": "ps-01",
+      "expiresAt": "2026-10-13T00:15:00.000Z"
+    },
+    {
+      "id": "xdr04-ps-02",
+      "source": "203.0.113.12",
+      "alertId": "ps-02",
+      "expiresAt": "2026-10-13T00:15:00.000Z"
+    },
+    {
+      "id": "xdr04-ps-03",
+      "source": "198.51.100.12",
+      "alertId": "ps-03",
+      "expiresAt": "2026-10-13T00:15:00.000Z"
+    },
+    {
+      "id": "xdr04-ps-04",
+      "source": "192.0.2.12",
+      "alertId": "ps-04",
+      "expiresAt": "2026-10-13T00:15:00.000Z"
+    },
+    {
+      "id": "xdr04-ps-05",
+      "source": "203.0.113.19",
+      "alertId": "ps-05",
+      "expiresAt": "2026-10-13T00:15:00.000Z"
+    },
+    {
+      "id": "xdr04-ps-06",
+      "source": "198.51.100.19",
+      "alertId": "ps-06",
+      "expiresAt": "2026-10-13T00:15:00.000Z"
+    },
+    {
+      "id": "xdr04-ps-07",
+      "source": "192.0.2.19",
+      "alertId": "ps-07",
+      "expiresAt": "2026-10-13T00:15:00.000Z"
+    },
+    {
+      "id": "xdr04-ps-08",
+      "source": "203.0.113.33",
+      "alertId": "ps-08",
+      "expiresAt": "2026-10-13T00:15:00.000Z"
+    }
+  ],
+  "results": [
+    {
+      "alertId": "ps-01",
+      "action": "block",
+      "confidence": 0.96,
+      "reason": "T1543-Unsigned-New-Service",
+      "description": "서명 없는 새 서비스가 임시 폴더의 실행 파일을 가리킵니다.",
+      "source": "203.0.113.12",
+      "level": 12,
+      "attempts": null,
+      "normal": false
+    },
+    {
+      "alertId": "ps-02",
+      "action": "block",
+      "confidence": 0.95,
+      "reason": "T1053-Untrusted-Scheduled-Task",
+      "description": "처음 보는 예약 작업이 임시 폴더의 프로그램을 수업 시간 밖에 실행합니다.",
+      "source": "203.0.113.12",
+      "level": 12,
+      "attempts": null,
+      "normal": false
+    },
+    {
+      "alertId": "ps-03",
+      "action": "block",
+      "confidence": 0.94,
+      "reason": "T1547-Startup-Folder-Persistence",
+      "description": "시작 폴더에 평소 목록에 없는 프로그램이 추가됐습니다.",
+      "source": "198.51.100.12",
+      "level": 11,
+      "attempts": null,
+      "normal": false
+    },
+    {
+      "alertId": "ps-04",
+      "action": "block",
+      "confidence": 0.98,
+      "reason": "T1543-T1053-Correlated-Persistence",
+      "description": "원격 주소에서 서명 없는 서비스 등록이 연속으로 3건입니다.",
+      "source": "192.0.2.12",
+      "level": 12,
+      "attempts": "3",
+      "normal": false
+    },
+    {
+      "alertId": "ps-05",
+      "action": "block",
+      "confidence": 0.95,
+      "reason": "T1053-Untrusted-Scheduled-Task",
+      "description": "예약 작업 이름이 임의 문자열이고 실행 파일이 임시 폴더에 있습니다.",
+      "source": "203.0.113.19",
+      "level": 10,
+      "attempts": null,
+      "normal": false
+    },
+    {
+      "alertId": "ps-06",
+      "action": "block",
+      "confidence": 0.96,
+      "reason": "T1543-Unsigned-New-Service",
+      "description": "서비스 실행 파일이 바뀌었고 서명이 없습니다.",
+      "source": "198.51.100.19",
+      "level": 12,
+      "attempts": null,
+      "normal": false
+    },
+    {
+      "alertId": "ps-07",
+      "action": "block",
+      "confidence": 0.98,
+      "reason": "T1543-T1053-Correlated-Persistence",
+      "description": "시작 프로그램과 예약 작업이 같은 임시 파일을 함께 가리킵니다.",
+      "source": "192.0.2.19",
+      "level": 11,
+      "attempts": null,
+      "normal": false
+    },
+    {
+      "alertId": "ps-08",
+      "action": "block",
+      "confidence": 0.96,
+      "reason": "T1543-Unsigned-New-Service",
+      "description": "평소 목록에 없는 서비스가 다시 켜도 남도록 등록됐습니다.",
+      "source": "203.0.113.33",
+      "level": 12,
+      "attempts": null,
+      "normal": false
+    },
+    {
+      "alertId": "ps-09",
+      "action": "alert",
+      "confidence": 0.64,
+      "reason": "T1543-T1053-Uncertain-Change",
+      "description": "user01 이 수업 중 예약 작업을 하나 만들었습니다. 서명은 확인되지 않았습니다.",
+      "source": "192.0.2.48",
+      "level": 6,
+      "attempts": null,
+      "normal": false
+    },
+    {
+      "alertId": "ps-10",
+      "action": "alert",
+      "confidence": 0.64,
+      "reason": "T1543-T1053-Uncertain-Change",
+      "description": "시작 항목에 수업 도구 이름이 하나 있습니다. 서명은 아직 모릅니다.",
+      "source": "198.51.100.48",
+      "level": 7,
+      "attempts": null,
+      "normal": false
+    },
+    {
+      "alertId": "ps-11",
+      "action": "alert",
+      "confidence": 0.64,
+      "reason": "T1543-T1053-Uncertain-Change",
+      "description": "서비스 설명만 한 번 바뀌었습니다. 실행 파일은 그대로입니다.",
+      "source": "203.0.113.48",
+      "level": 5,
+      "attempts": null,
+      "normal": false
+    },
+    {
+      "alertId": "ps-12",
+      "action": "alert",
+      "confidence": 0.64,
+      "reason": "T1543-T1053-Uncertain-Change",
+      "description": "예약 작업이 하나 있고 실행 시각은 수업 시간입니다.",
+      "source": "192.0.2.49",
+      "level": 6,
+      "attempts": null,
+      "normal": false
+    },
+    {
+      "alertId": "ps-13",
+      "action": "alert",
+      "confidence": 0.64,
+      "reason": "T1543-T1053-Uncertain-Change",
+      "description": "임시 폴더에 실행 파일이 하나 생겼습니다. 서비스 등록은 없습니다.",
+      "source": "198.51.100.49",
+      "level": 8,
+      "attempts": null,
+      "normal": false
+    },
+    {
+      "alertId": "ps-14",
+      "action": "alert",
+      "confidence": 0.64,
+      "reason": "T1543-T1053-Uncertain-Change",
+      "description": "시작 폴더 변경이 1건입니다. 이어서 실행된 기록은 없습니다.",
+      "source": "203.0.113.49",
+      "level": 6,
+      "attempts": null,
+      "normal": false
+    },
+    {
+      "alertId": "ps-15",
+      "action": "alert",
+      "confidence": 0.64,
+      "reason": "T1543-T1053-Uncertain-Change",
+      "description": "예약 작업 이름이 수업 과제와 비슷하고 만든 사람은 user07 입니다.",
+      "source": "192.0.2.53",
+      "level": 7,
+      "attempts": null,
+      "normal": false
+    },
+    {
+      "alertId": "ps-16",
+      "action": "alert",
+      "confidence": 0.64,
+      "reason": "T1543-T1053-Uncertain-Change",
+      "description": "서비스가 한 번 멈췄다가 같은 파일로 다시 시작됐습니다.",
+      "source": "198.51.100.53",
+      "level": 5,
+      "attempts": null,
+      "normal": false
+    },
+    {
+      "alertId": "ps-17",
+      "action": "record",
+      "confidence": 0.06,
+      "reason": "T1543-T1053-Benign-Activity",
+      "description": "로그인했습니다.",
+      "source": "192.0.2.74",
+      "level": 3,
+      "attempts": null,
+      "normal": true
+    },
+    {
+      "alertId": "ps-18",
+      "action": "record",
+      "confidence": 0.06,
+      "reason": "T1543-T1053-Benign-Activity",
+      "description": "운영체제 업데이트 예약이 평소 시각에 그대로입니다.",
+      "source": "192.0.2.74",
+      "level": 2,
+      "attempts": null,
+      "normal": false
+    },
+    {
+      "alertId": "ps-19",
+      "action": "record",
+      "confidence": 0.06,
+      "reason": "T1543-T1053-Benign-Activity",
+      "description": "기존 수업 도구 서비스가 서명된 채로 실행 중입니다.",
+      "source": "198.51.100.74",
+      "level": 3,
+      "attempts": null,
+      "normal": false
+    },
+    {
+      "alertId": "ps-20",
+      "action": "record",
+      "confidence": 0.06,
+      "reason": "T1543-T1053-Benign-Activity",
+      "description": "시작 프로그램 목록을 읽기만 했습니다.",
+      "source": "198.51.100.74",
+      "level": 2,
+      "attempts": null,
+      "normal": true
+    },
+    {
+      "alertId": "ps-21",
+      "action": "record",
+      "confidence": 0.06,
+      "reason": "T1543-T1053-Benign-Activity",
+      "description": "정의 업데이트가 평소 저장소에서 끝났습니다.",
+      "source": "203.0.113.74",
+      "level": 3,
+      "attempts": null,
+      "normal": true
+    },
+    {
+      "alertId": "ps-22",
+      "action": "record",
+      "confidence": 0.06,
+      "reason": "T1543-T1053-Benign-Activity",
+      "description": "로그아웃했습니다.",
+      "source": "203.0.113.74",
+      "level": 3,
+      "attempts": null,
+      "normal": true
+    },
+    {
+      "alertId": "ps-23",
+      "action": "record",
+      "confidence": 0.06,
+      "reason": "T1543-T1053-Benign-Activity",
+      "description": "기존 예약 작업이 수업 자료 복사를 마쳤습니다.",
+      "source": "192.0.2.75",
+      "level": 2,
+      "attempts": null,
+      "normal": false
+    },
+    {
+      "alertId": "ps-24",
+      "action": "record",
+      "confidence": 0.06,
+      "reason": "T1543-T1053-Benign-Activity",
+      "description": "자료실 화면이 열렸습니다.",
+      "source": "198.51.100.75",
+      "level": 3,
+      "attempts": null,
+      "normal": true
+    }
+  ]
+}

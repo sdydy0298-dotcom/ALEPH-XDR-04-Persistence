@@ -1,1 +1,74 @@
-[]
+[
+  {
+    "id": "xdr04-ps-01",
+    "action": "deny",
+    "source": "203.0.113.12",
+    "alertId": "ps-01",
+    "reason": "T1543-Unsigned-New-Service",
+    "createdAt": "2026-10-13T00:00:00.000Z",
+    "expiresAt": "2026-10-13T00:15:00.000Z"
+  },
+  {
+    "id": "xdr04-ps-02",
+    "action": "deny",
+    "source": "203.0.113.12",
+    "alertId": "ps-02",
+    "reason": "T1053-Untrusted-Scheduled-Task",
+    "createdAt": "2026-10-13T00:00:00.000Z",
+    "expiresAt": "2026-10-13T00:15:00.000Z"
+  },
+  {
+    "id": "xdr04-ps-03",
+    "action": "deny",
+    "source": "198.51.100.12",
+    "alertId": "ps-03",
+    "reason": "T1547-Startup-Folder-Persistence",
+    "createdAt": "2026-10-13T00:00:00.000Z",
+    "expiresAt": "2026-10-13T00:15:00.000Z"
+  },
+  {
+    "id": "xdr04-ps-04",
+    "action": "deny",
+    "source": "192.0.2.12",
+    "alertId": "ps-04",
+    "reason": "T1543-T1053-Correlated-Persistence",
+    "createdAt": "2026-10-13T00:00:00.000Z",
+    "expiresAt": "2026-10-13T00:15:00.000Z"
+  },
+  {
+    "id": "xdr04-ps-05",
+    "action": "deny",
+    "source": "203.0.113.19",
+    "alertId": "ps-05",
+    "reason": "T1053-Untrusted-Scheduled-Task",
+    "createdAt": "2026-10-13T00:00:00.000Z",
+    "expiresAt": "2026-10-13T00:15:00.000Z"
+  },
+  {
+    "id": "xdr04-ps-06",
+    "action": "deny",
+    "source": "198.51.100.19",
+    "alertId": "ps-06",
+    "reason": "T1543-Unsigned-New-Service",
+    "createdAt": "2026-10-13T00:00:00.000Z",
+    "expiresAt": "2026-10-13T00:15:00.000Z"
+  },
+  {
+    "id": "xdr04-ps-07",
+    "action": "deny",
+    "source": "192.0.2.19",
+    "alertId": "ps-07",
+    "reason": "T1543-T1053-Correlated-Persistence",
+    "createdAt": "2026-10-13T00:00:00.000Z",
+    "expiresAt": "2026-10-13T00:15:00.000Z"
+  },
+  {
+    "id": "xdr04-ps-08",
+    "action": "deny",
+    "source": "203.0.113.33",
+    "alertId": "ps-08",
+    "reason": "T1543-Unsigned-New-Service",
+    "createdAt": "2026-10-13T00:00:00.000Z",
+    "expiresAt": "2026-10-13T00:15:00.000Z"
+  }
+]

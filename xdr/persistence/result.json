@@ -1,0 +1,155 @@
+{
+  "schema": "aleph.xdr.result.v1",
+  "moduleKey": "persistence",
+  "decisions": [
+    {
+      "alertId": "ps-01",
+      "action": "block",
+      "confidence": 0.96,
+      "reason": "T1543-Unsigned-New-Service"
+    },
+    {
+      "alertId": "ps-02",
+      "action": "block",
+      "confidence": 0.95,
+      "reason": "T1053-Untrusted-Scheduled-Task"
+    },
+    {
+      "alertId": "ps-03",
+      "action": "block",
+      "confidence": 0.94,
+      "reason": "T1547-Startup-Folder-Persistence"
+    },
+    {
+      "alertId": "ps-04",
+      "action": "block",
+      "confidence": 0.98,
+      "reason": "T1543-T1053-Correlated-Persistence"
+    },
+    {
+      "alertId": "ps-05",
+      "action": "block",
+      "confidence": 0.95,
+      "reason": "T1053-Untrusted-Scheduled-Task"
+    },
+    {
+      "alertId": "ps-06",
+      "action": "block",
+      "confidence": 0.96,
+      "reason": "T1543-Unsigned-New-Service"
+    },
+    {
+      "alertId": "ps-07",
+      "action": "block",
+      "confidence": 0.98,
+      "reason": "T1543-T1053-Correlated-Persistence"
+    },
+    {
+      "alertId": "ps-08",
+      "action": "block",
+      "confidence": 0.96,
+      "reason": "T1543-Unsigned-New-Service"
+    },
+    {
+      "alertId": "ps-09",
+      "action": "alert",
+      "confidence": 0.64,
+      "reason": "T1543-T1053-Uncertain-Change"
+    },
+    {
+      "alertId": "ps-10",
+      "action": "alert",
+      "confidence": 0.64,
+      "reason": "T1543-T1053-Uncertain-Change"
+    },
+    {
+      "alertId": "ps-11",
+      "action": "alert",
+      "confidence": 0.64,
+      "reason": "T1543-T1053-Uncertain-Change"
+    },
+    {
+      "alertId": "ps-12",
+      "action": "alert",
+      "confidence": 0.64,
+      "reason": "T1543-T1053-Uncertain-Change"
+    },
+    {
+      "alertId": "ps-13",
+      "action": "alert",
+      "confidence": 0.64,
+      "reason": "T1543-T1053-Uncertain-Change"
+    },
+    {
+      "alertId": "ps-14",
+      "action": "alert",
+      "confidence": 0.64,
+      "reason": "T1543-T1053-Uncertain-Change"
+    },
+    {
+      "alertId": "ps-15",
+      "action": "alert",
+      "confidence": 0.64,
+      "reason": "T1543-T1053-Uncertain-Change"
+    },
+    {
+      "alertId": "ps-16",
+      "action": "alert",
+      "confidence": 0.64,
+      "reason": "T1543-T1053-Uncertain-Change"
+    },
+    {
+      "alertId": "ps-17",
+      "action": "record",
+      "confidence": 0.06,
+      "reason": "T1543-T1053-Benign-Activity"
+    },
+    {
+      "alertId": "ps-18",
+      "action": "record",
+      "confidence": 0.06,
+      "reason": "T1543-T1053-Benign-Activity"
+    },
+    {
+      "alertId": "ps-19",
+      "action": "record",
+      "confidence": 0.06,
+      "reason": "T1543-T1053-Benign-Activity"
+    },
+    {
+      "alertId": "ps-20",
+      "action": "record",
+      "confidence": 0.06,
+      "reason": "T1543-T1053-Benign-Activity"
+    },
+    {
+      "alertId": "ps-21",
+      "action": "record",
+      "confidence": 0.06,
+      "reason": "T1543-T1053-Benign-Activity"
+    },
+    {
+      "alertId": "ps-22",
+      "action": "record",
+      "confidence": 0.06,
+      "reason": "T1543-T1053-Benign-Activity"
+    },
+    {
+      "alertId": "ps-23",
+      "action": "record",
+      "confidence": 0.06,
+      "reason": "T1543-T1053-Benign-Activity"
+    },
+    {
+      "alertId": "ps-24",
+      "action": "record",
+      "confidence": 0.06,
+      "reason": "T1543-T1053-Benign-Activity"
+    }
+  ],
+  "counts": {
+    "block": 8,
+    "alert": 8,
+    "record": 8
+  }
+}
