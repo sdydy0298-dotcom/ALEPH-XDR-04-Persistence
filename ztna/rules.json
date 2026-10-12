@@ -1,0 +1,11 @@
+{
+  "description": "XDR-04 파일 기반 ZTNA 학습용 기존 정책. XDR 응답 모듈은 변경하지 않음",
+  "allow": [
+    {
+      "id": "baseline-allow",
+      "action": "allow",
+      "description": "활성 임시 격리가 없는 시험용 PC 접속 허용"
+    }
+  ],
+  "deny": []
+}
