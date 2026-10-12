@@ -1,0 +1,26 @@
+name: Verify XDR-04 Persistence Defense
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Replay official persistence Wazuh fixture
+        run: npm run xdr:run -- persistence
+      - name: Standalone judge and policy regression tests
+        run: npm test
+      - name: Replay again to check reproducibility
+        run: npm run xdr:run -- persistence
+      - name: Build public demo
+        run: npm run build
+      - name: Verify all artifacts committed identically
+        run: |
+          git diff --exit-code -- xdr/persistence/result.json xdr/alerts.log xdr/temporary-deny.json public/report.json public/samples.json public/index.html public/app.js public/styles.css public/decide.mjs
