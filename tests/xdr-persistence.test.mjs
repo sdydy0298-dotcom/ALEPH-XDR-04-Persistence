@@ -177,3 +177,14 @@ test('public report preserves judge actions without claiming live machine isolat
  assert.match(app,/import \{decide\} from '.\/decide.mjs'/);
  assert.doesNotMatch(ui,/ALEPH-XDR-03|kc-01|JNDI|Log4Shell/);
 });
+
+
+test('XDR-04 public branding and repository links do not inherit XDR-03 template',async()=>{
+  const source=await readFile(new URL('../index.html',import.meta.url),'utf8');
+  const published=await readFile(new URL('../public/index.html',import.meta.url),'utf8');
+  assert.equal(source,published,'source and deployed index.html must match');
+  assert.match(published,/<span>ALEPH <b>XDR<span class="slash">\/<\/span>04<\/b><\/span>/);
+  assert.match(published,/<title>ALEPH XDR-04 \| Persistence Defense<\/title>/);
+  assert.equal((published.match(/https:\/\/github\.com\/sdydy0298-dotcom\/ALEPH-XDR-04-Persistence/g)||[]).length,2);
+  assert.doesNotMatch(published,/ALEPH-XDR-04-Web-Injection|ALEPH-XDR-03|XDR<span class="slash">\/<\/span>03/);
+});
