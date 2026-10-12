@@ -46,7 +46,7 @@ function signal(alert) {
     Object.keys(task).length>0;
   const startup=/시작\s*(?:폴더|프로그램|항목)|startup|autorun|자동\s*시작|로그온\s*실행/.test(description) ||
     /\/startup\//.test(path);
-  const newChange=/처음\s*보는|새로|새\s*서비스|생겼|등록|생성|설치|추가|바뀌|변경|교체|modified|created|registered|new\s|install/.test(description) ||
+  const newChange=/처음\s*보는|새로|새\s*서비스|생겼|등록|생성|설치|추가|바뀌|변경|교체|임의\s*문자열|modified|created|registered|new\s|install/.test(description) ||
     d.isNew===true || service.isNew===true || task.isNew===true;
   const missingSignature=/서명\s*없는|서명이\s*없|미서명|서명되지\s*않|unsigned|untrusted|invalid\s*sign|signature.*(?:missing|invalid)/.test(description) ||
     d.signed===false || service.signed===false || service.signatureValid===false ||
